@@ -1,7 +1,6 @@
 {
     "main": "bin/hab.php",
     "directories": ["src"],
-    "files": ["./current.version"],
     "finder": [
         {
             "name": "*.php",
