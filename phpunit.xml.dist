@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="./vendor/autoload.php" verbose="true">
+    <testsuites>
+        <testsuite name="DeskPRO Hab Test Suite">
+            <directory>./test</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="TEST_PROJECT_ROOT_DIR" value="/tmp/hab-test"/>
+    </php>
+</phpunit>

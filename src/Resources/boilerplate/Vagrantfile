@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'json'
+
+system "vagrant plugin install vagrant-hostmanager" unless Vagrant.has_plugin?("vagrant-hostmanager")
+habJsonPath = File.expand_path("hab.json", File.dirname(__FILE__))
+
+Vagrant.configure("2") do |config|
+
+  # Load settings from hab.json
+  settings = JSON::parse(File.read(habJsonPath))
+
+  # Base image
+  config.vm.box = "ubuntu/xenial64"
+
+  # Hostmanager
+  config.hostmanager.enabled = true
+  config.hostmanager.manage_host = true
+  config.hostmanager.manage_guest = true
+  config.hostmanager.ignore_private_ip = false
+  config.hostmanager.include_offline = true
+
+  # Network
+  config.vm.network "private_network", ip: settings['ip']
+
+  # Share
+  config.vm.synced_folder ".", "/var/www/deskpro", type: "nfs", mount_options: ['actimeo=1', 'nolock']
+
+  # Image config
+  config.vm.hostname = settings['hostname']
+  config.vm.provision "shell", path: "./.hab/provision/main.sh"
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--uartmode1", "disconnected"]
+    v.memory = settings['memory']
+    v.cpus = settings['cpus']
+  end
+
+end

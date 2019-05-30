@@ -1,0 +1,11 @@
+/.idea
+/.vagrant
+/vendor
+/box.phar
+/bin/hab.phar
+/box.json
+/.hab
+/hab.json
+/hab.phar
+/Vagrantfile
+/phpunit.xml
