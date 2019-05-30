@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @package DeskPRO\Hab\Command
  */
-class SelfUpdateCommand extends Command
+final class SelfUpdateCommand extends Command
 {
     use FilePathUtilsTrait;
 
@@ -47,7 +47,11 @@ class SelfUpdateCommand extends Command
 
         try {
             if ($updater->update()) {
-                $output->writeln('<info>Successfully updated!</info>');
+                $output->writeln(sprintf(
+                    '-> Successfully updated from version <info>%s</info> to <info>%s</info>',
+                    substr($updater->getOldVersion(), 0, 10),
+                    substr($updater->getNewVersion(), 0, 10)
+                ));
             } else {
                 $output->writeln('<info>No update available, you\'re currently using the latest version</info>');
             }
