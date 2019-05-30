@@ -33,14 +33,12 @@ class SelfUpdateCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $updater = new Updater();
+        $updater = new Updater(null, false);
         $updater->setStrategy(Updater::STRATEGY_GITHUB);
 
-        $updater->getStrategy()->setPackageName('ashleydawson/deskpro-hab'); // fixme
+        $updater->getStrategy()->setPackageName('ashleydawson/deskpro-hab');
         $updater->getStrategy()->setPharName('hab.phar');
-        $updater->getStrategy()->setCurrentLocalVersion(
-            file_get_contents(__DIR__.self::createPath(['..', '..']).'current.version')
-        );
+        $updater->getStrategy()->setCurrentLocalVersion('@git-tag@');
 
         try {
             if ($updater->update()) {
