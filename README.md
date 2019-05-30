@@ -3,8 +3,8 @@ Deskpro Hab
 
 [![Build Status](https://travis-ci.org/AshleyDawson/deskpro-hab.svg?branch=master)](https://travis-ci.org/AshleyDawson/deskpro-hab)
 
-Hab(itat) is a virtual development environment bootstrapper, configuring a [Vagrant](https://www.vagrantup.com/) instance. The Vagrant instance includes all
-development dependencies to run and develop against Deskpro.
+Hab(itat) is a virtual development environment bootstrapper for setting up configuring a [Vagrant](https://www.vagrantup.com/) instance. The Vagrant instance includes all
+development dependencies to run Deskpro and develop against it.
 
 Installation
 ------------
