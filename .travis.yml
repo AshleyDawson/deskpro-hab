@@ -10,3 +10,12 @@ script:
     - composer install
     - vendor/bin/phpunit
     - vendor/bin/box compile -n
+
+deploy:
+    provider: releases
+    api-key:
+        secure: qgNBnGVwKx3SI2yfcGdOIaArMs/fXjtthEbtAPFdGK/S44nc2yIo8PgwdAVt/StotgBLn2R0Sr3vFwW5XMUfwVX1XV+XorO539rDBqgslL+5myaYxPUDGicCNSBWLxMQ7LnCQluoGK0yrKKVhdrEIOuVjfnmU51quR3yJMM2XW5X+CRHcTAzGOiphQYu9zPulmTID8fM7V4qKDzTA7KnVxf3FibWtInyCKvNHVPZjXWClQufo2Fi0YcrRoP4RzJ897YHKL/V35+8uJvtXlsr0wehgcuCsv+q/k9H/hRqaq7MU1bV0H0XWuRp4/dzRMZ2+cgUiz3Wvrp7q+aqjv0d50KD1XP2GJhEvBT4wbKPKQrbiglYdUqkX9X9SOmvNk1IvPBpR/R4ck1by54q7fWnm8/iSSp0oK/UECJFr4WSEmmy7+TQlR9GdxDU8GPqWtmQTV8znJVy2SMLy8aF2FmWNv0ngevG6LsiJL65SnQL5K5QhQnO/YFZS63KJrQWUOx8xRff39Lp0oFrnqKapqXBaO1s7iFSed5ZGKgJS7yUyMRxY0918uYv37TrFKBeoL8nXWrdqA5Y6mAPYBce7O+uLUQz4NPl69Gi4Eaf9ywFNb5lLbrdd+ZibuXUaYlgTS2LMVeffs+7hYt9IXwIAM98iGTrAzQzn8MQY6331vJP/A8=
+    file: bin/hab.phar
+    skip_cleanup: true
+    on:
+        tags: true
