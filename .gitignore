@@ -9,3 +9,4 @@
 /hab.phar
 /Vagrantfile
 /phpunit.xml
+/.phpunit.result.cache
