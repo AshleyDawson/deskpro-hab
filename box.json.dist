@@ -1,7 +1,5 @@
 {
-    "chmod": "0755",
     "main": "bin/hab.php",
-    "output": "bin/hab.phar",
     "directories": ["src"],
     "files": ["./current.version"],
     "finder": [
@@ -10,6 +8,5 @@
             "exclude": ["test", "tests"],
             "in": "vendor"
          }
-    ],
-    "stub": true
+    ]
 }
