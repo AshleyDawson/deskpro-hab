@@ -7,5 +7,6 @@
             "exclude": ["test", "tests"],
             "in": "vendor"
          }
-    ]
+    ],
+    "git-tag": "git_tag"
 }

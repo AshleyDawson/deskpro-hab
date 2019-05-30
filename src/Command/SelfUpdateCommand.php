@@ -18,6 +18,11 @@ class SelfUpdateCommand extends Command
     use FilePathUtilsTrait;
 
     /**
+     * Packagist package name
+     */
+    private const PACKAGE_NAME = 'ashleydawson/deskpro-hab';
+
+    /**
      * {@inheritDoc}
      */
     protected function configure()
@@ -36,9 +41,9 @@ class SelfUpdateCommand extends Command
         $updater = new Updater(null, false);
         $updater->setStrategy(Updater::STRATEGY_GITHUB);
 
-        $updater->getStrategy()->setPackageName('ashleydawson/deskpro-hab');
+        $updater->getStrategy()->setPackageName(self::PACKAGE_NAME);
         $updater->getStrategy()->setPharName('hab.phar');
-        $updater->getStrategy()->setCurrentLocalVersion('@git-tag@');
+        $updater->getStrategy()->setCurrentLocalVersion('@git_tag@'); // Replaced by box phar compilation
 
         try {
             if ($updater->update()) {
