@@ -49,4 +49,3 @@ server {
 END
 
 service nginx restart
-service php7.1-fpm restart
