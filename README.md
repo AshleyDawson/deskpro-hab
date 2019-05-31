@@ -6,6 +6,8 @@ Deskpro Hab
 Hab(itat) is a virtual development environment bootstrapper for setting up and configuring a guest [Vagrant](https://www.vagrantup.com/) instance. The Vagrant instance includes all
 development dependencies to run Deskpro and develop against it.
 
+![Deskpro Hab VM SSH](https://raw.githubusercontent.com/AshleyDawson/deskpro-hab/master/src/Resources/img/deskpro-hab-vm-screenshot.png)
+
 Installation
 ------------
 
