@@ -92,6 +92,12 @@ The `hab.phar` package may be self updated using the following command:
 $ php hab.phar self-update
 ```
 
+After updating, you'd usually want to force initialise the modified bootstrap files:
+
+```bash
+$ php hab.phar init --force
+```
+
 Testing
 -------
 
