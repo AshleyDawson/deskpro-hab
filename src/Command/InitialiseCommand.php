@@ -150,6 +150,7 @@ final class InitialiseCommand extends Command
                 ['Application URL', sprintf('http://%s/', $hostname)],
                 ['Elasticsearch URL', sprintf('http://%s:9200/', $hostname)],
                 ['Database DSN', sprintf('mysql://root:root@%s:3306/deskpro', $hostname)],
+                ['Database Login Path', '$ mysql --login-path=local'],
             ])
         ;
         $table->render();
