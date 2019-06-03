@@ -63,6 +63,26 @@ After Hab has been initialised you should exclude the following files from versi
 /Vagrantfile
 ```
 
+**Note:** To run the Deskpro test suite you will need to configure the application to use `--login-path` option for things like
+`mysqldump`, etc. as this will suppress the "password in command prompt is insecure" warnings. This is done by adding the
+`--login-path=local` option to the test configuration database parameters (after copying the .dist config):
+
+```php
+# app/BUILD/tests/config/config.all.php
+
+// ...
+
+$CONFIG['database'] = [
+    'host'     => '127.0.0.1',
+    'user'     => 'root',
+    'password' => 'root',
+    'dbname'   => $dbName.$dbPostfix,
+    'login-path' => 'local', // Append this parameter
+];
+
+// ...
+```
+
 Updating
 --------
 
