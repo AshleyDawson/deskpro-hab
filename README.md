@@ -63,6 +63,19 @@ After Hab has been initialised you should exclude the following files from versi
 /Vagrantfile
 ```
 
+Once the VM is booted, you can then SSH into it and run the usual installation and setup scripts as described in the [Deskpro setup instructions](https://github.com/deskpro/deskpro/blob/develop/README.md).
+
+**Note:** When running the dev assets server, do the following to override the default hostname:
+
+```bash
+$ ASSET_SERVER_HOSTNAME=deskpro.local npm run dev
+```
+
+Assets server env. variables are as follows:
+
+* `ASSET_SERVER_HOSTNAME` - Override the asset server hostname (default is `localhost`)
+* `ASSET_SERVER_PORT` - Override the asset server port (default is `9666`)
+
 **Note:** To run the Deskpro test suite you will need to configure the application to use `--login-path` option for things like
 `mysqldump`, etc. as this will suppress the "password in command prompt is insecure" warnings. This is done by adding the
 `--login-path=local` option to the test configuration database parameters (after copying the .dist config):
