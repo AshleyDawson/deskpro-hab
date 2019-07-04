@@ -99,8 +99,8 @@ $CONFIG['database'] = [
 Default Service Connectivity
 ----------------------------
 
-* MySQL DSN: mysql://root:root@deskpro.local:3306/deskpro
-* Elasticsearch: http://deskpro.local:9200/ _(requires service start)_
+* MySQL DSN: `mysql://root:root@deskpro.local:3306/deskpro`
+* Elasticsearch URL: `http://deskpro.local:9200/` _(requires service start)_
 
 Updating
 --------
