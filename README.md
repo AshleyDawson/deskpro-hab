@@ -39,8 +39,7 @@ Hab is packaged as a .phar and is used to bootstrap the virtual development infr
 17. Run `ASSET_SERVER_HOSTNAME=deskpro.local npm run dev` to start the asset server
 18. In another terminal on the host machine (your computer)
 19. Run `vagrant ssh` to access the virtual machine as another session
-20. Run `bin/install --install-source dev` to install Deskpro (when prompted, enter the project URL "http://deskpro.local/
-")
+20. Run `bin/install --install-source dev` to install Deskpro (when prompted, enter the project URL "http://deskpro.local/")
 21. Check that the `asset_paths` are pointed to `deskpro.local` in `config/config.paths.php`
 22. You should now be able to access Deskpro via `http://deskpro.local/`
 
