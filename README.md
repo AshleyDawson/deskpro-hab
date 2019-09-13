@@ -4,7 +4,7 @@ Deskpro Hab
 [![Build Status](https://travis-ci.org/AshleyDawson/deskpro-hab.svg?branch=master)](https://travis-ci.org/AshleyDawson/deskpro-hab)
 
 Hab(itat) is a virtual development environment bootstrapper for setting up and configuring a guest [Vagrant](https://www.vagrantup.com/) instance. The Vagrant instance includes all
-development dependencies to run Deskpro and develop against it.
+development dependencies to run Deskpro and develop against it. Hab is designed for Linux and Mac OS host machines.
 
 ![Deskpro Hab VM SSH Screenshot](https://github.com/AshleyDawson/deskpro-hab/raw/master/src/Resources/img/deskpro-hab-vm-screenshot.png)
 
@@ -16,6 +16,32 @@ Please install both [Vagrant](https://www.vagrantup.com/downloads.html) and [Vir
 Hab is packaged as a .phar and is used to bootstrap the virtual development infrastructure from within the Deskpro project.
 
 [Download the latest version hab.phar](https://github.com/AshleyDawson/deskpro-hab/releases) and place it within the root of your Deskpro project directory.
+
+"Quick" Start Guide (Linux & Mac OS)
+------------------------------------
+
+1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads) on your computer
+2. Clone the [Deskpro repository](https://github.com/deskpro/deskpro)
+3. Go to the Deskpro project root and [download Hab](https://github.com/AshleyDawson/deskpro-hab/releases) to this location
+4. Initialise and update Git submodules by running `git submodule init && git submodule update`
+5. Run `php ./hab.phar init` to initialise the Vagrant and provisioning scripts
+6. Run `vagrant up`
+7. Run `vagrant ssh` to access the virtual machine
+8. Download and install [Composer](https://getcomposer.org/download/) globally on the virtual machine
+9. Run `cd /var/www/deskpro/app/BUILD`
+10. Run `composer install -o`
+11. Run `cd /var/www/deskpro/www/assets/BUILD/web`
+12. Run `npm install` (this could take a while)
+13. Run `bower install --config.interactive=false --allow-root`
+14. Run `npm run gulp`
+15. Run `cd /var/www/deskpro/www/assets/BUILD/pub`
+16. Run `npm install` (this could take a while)
+17. Run `ASSET_SERVER_HOSTNAME=deskpro.local npm run dev` to start the asset server
+18. In another terminal on the host machine (your computer)
+19. Run `vagrant ssh` to access the virtual machine as another session
+20. Run `bin/install --install-source dev` to install Deskpro
+21. Check that the `asset_paths` are pointed to `deskpro.local` in `config/config.paths.php`
+22. You should now be able to access Deskpro via `http://deskpro.local/`
 
 Usage
 -----
