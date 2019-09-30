@@ -41,7 +41,7 @@ Hab is packaged as a .phar and is used to bootstrap the virtual development infr
 19. Run `vagrant ssh` to access the virtual machine as another session
 20. Run `bin/install --install-source dev` to install Deskpro, when prompted:
     * enter the project URL "http://deskpro.local/"
-    * enter "127.0.0.1" as the database hostname and "root" as both the database username and password
+    * enter "127.0.0.1" as the database hostname and "root" as both the database username and password. The database name is "deskpro"
 21. Check that the `asset_paths` are pointed to `deskpro.local` in `config/config.paths.php`
 22. You should now be able to access Deskpro via `http://deskpro.local/`
 
