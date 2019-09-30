@@ -22,7 +22,7 @@ Hab is packaged as a .phar and is used to bootstrap the virtual development infr
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads) on your computer
 2. Clone the [Deskpro repository](https://github.com/deskpro/deskpro)
-3. Go to the Deskpro project root and [download Hab](https://github.com/AshleyDawson/deskpro-hab/releases) to this location, then `cd deskpro` to enter the project directory
+3. Go to the Deskpro project root and [download Hab](https://github.com/AshleyDawson/deskpro-hab/releases) to this location
 4. Initialise and update Git submodules by running `git submodule init && git submodule update`
 5. Run `php ./hab.phar init` to initialise Vagrant and provisioning scripts
 6. Run `vagrant up`
