@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-wget https://nodejs.org/dist/v6.9.5/node-v6.9.5-linux-x64.tar.gz
+wget https://nodejs.org/download/release/v8.11.4/node-v8.11.4-linux-x64.tar.xz
 mkdir -p /usr/local/lib/nodejs
-tar zxf node-v6.9.5-linux-x64.tar.gz -C /usr/local/lib/nodejs
+tar xf node-v8.11.4-linux-x64.tar.xz -C /usr/local/lib/nodejs
