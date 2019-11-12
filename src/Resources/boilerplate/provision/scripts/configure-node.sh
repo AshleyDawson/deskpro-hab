@@ -8,4 +8,7 @@ npm cache clean --force
 
 npm install -g \
     bower \
-    gulp
+    gulp \
+    cpx
+
+npm cache clean --force
