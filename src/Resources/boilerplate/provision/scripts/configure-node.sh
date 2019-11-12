@@ -9,9 +9,3 @@ npm cache clean --force
 npm install -g \
     bower \
     gulp
-
-cd /var/www/deskpro/www/assets/BUILD/pub
-npm install \
-    popper.js@^1.14.3 \
-    angular@^1.2
-cd ~/
