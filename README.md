@@ -43,7 +43,11 @@ Hab is packaged as a .phar and is used to bootstrap the virtual development infr
     * enter the project URL "http://deskpro.local/"
     * enter "127.0.0.1" as the database hostname and "root" as both the database username and password. The database name is "deskpro"
 21. Check that the `asset_paths` are pointed to `deskpro.local:9666` in `config/config.paths.php`
-22. You should now be able to access Deskpro via `http://deskpro.local/`
+22. Add the following line to the bottom of `config/advanced/config.settings.php`:
+```
+$SETTINGS['DESKPRO_APP_ASSETS_URL'] = 'http://deskpro.local/assets/BUILD/pub/build/';
+```
+23. You should now be able to access Deskpro via `http://deskpro.local/`
 
 Usage
 -----

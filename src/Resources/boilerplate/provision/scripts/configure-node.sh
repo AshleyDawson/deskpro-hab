@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-echo "export PATH=/usr/local/lib/nodejs/node-v8.11.1-linux-x64/bin:\$PATH" >> /home/vagrant/.profile
-ln -s /usr/local/lib/nodejs/node-v8.11.1-linux-x64/bin/node /usr/bin/node
-ln -s /usr/local/lib/nodejs/node-v8.11.1-linux-x64/bin/npm /usr/bin/npm
-
-npm install npm@5.7.1 -g
+echo "export PATH=/usr/local/lib/nodejs/node-v10.12.0-linux-x64/bin:\$PATH" >> /home/vagrant/.profile
+ln -s /usr/local/lib/nodejs/node-v10.12.0-linux-x64/bin/node /usr/bin/node
+ln -s /usr/local/lib/nodejs/node-v10.12.0-linux-x64/bin/npm /usr/bin/npm
 
 npm install -g \
     bower \
