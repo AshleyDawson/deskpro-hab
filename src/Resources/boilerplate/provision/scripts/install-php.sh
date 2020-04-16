@@ -7,7 +7,6 @@ apt-get install -y \
     php7.1-curl \
     php7.1-gd \
     php7.1-mbstring \
-    php7.1-common \
     php7.1-mysql \
     php7.1-xml \
     php7.1-mcrypt \
